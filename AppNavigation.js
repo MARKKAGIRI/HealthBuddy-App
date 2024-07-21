@@ -11,6 +11,7 @@ export default function AppNavigation(){
                 <Stack.Screen name="Sign In" component={SignIn} />
                 <Stack.Screen name="Sign Up" component={SignUp} />
                 <Stack.Screen name="Profile" component={Profile} />
+                <Stack.Screen name="Info" component={Info} />
             </Stack.Navigator>
         </NavigationContainer>
     )

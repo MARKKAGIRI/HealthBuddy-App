@@ -51,40 +51,41 @@ export default function Search(){
 
             <View style={styles.popularBox}>
                 <Text>Popular</Text>
-                {
-                    DoctorData.map((doc,index)=>{
-                        return(
-                            <ScrollView style={styles.docBox}>
-                                <TouchableOpacity style={styles.docBox} key={index}>
-                                    <View style={styles.docContainer}>
-                                        <View style={{display:'flex',
-                                        flexDirection: 'row'}}>
-                                            <Image 
-                                                source={doc.image}
-                                                style={styles.docImage}
-                                            />
-                                            <View style={styles.docText}>
-                                                <Text style={styles.docName}>{doc.name}</Text>
-                                                <Text style={styles.docHospital}>{doc.hospital}</Text>
-                                                <Text style={styles.docSpeciality}>{doc.speciality}</Text>
+                <ScrollView style={styles.docBox}>
+
+                    {
+                        DoctorData.map((doc,index)=>{
+                            return(
+                                    <TouchableOpacity style={styles.docBox} key={index}>
+                                        <View style={styles.docContainer}>
+                                            <View style={{display:'flex',
+                                                flexDirection: 'row'}}>
+                                                <Image 
+                                                    source={doc.image}
+                                                    style={styles.docImage}
+                                                />
+                                                <View style={styles.docText}>
+                                                    <Text style={styles.docName}>{doc.name}</Text>
+                                                    <Text style={styles.docHospital}>{doc.hospital}</Text>
+                                                    <Text style={styles.docSpeciality}>{doc.speciality}</Text>
+                                                </View>
+                                                
                                             </View>
                                             
+                                            <View style={styles.ratingContainer}>
+                                                <Image
+                                                    source={require('../assets/star.png')}
+                                                    style={styles.starImage} 
+                                                />
+                                                <Text>{doc.rating}</Text>
+                                            </View>
                                         </View>
-                                        
-                                        <View style={styles.ratingContainer}>
-                                            <Image
-                                                source={require('../assets/star.png')}
-                                                style={styles.starImage} 
-                                            />
-                                            <Text>{doc.rating}</Text>
-                                        </View>
-                                    </View>
-                                </TouchableOpacity>
-                            </ScrollView>
-                            
-                        )
-                    })
-                }
+                                    </TouchableOpacity>                            
+                            )
+                        })
+                    }
+                </ScrollView>
+
                
             </View>
         </SafeAreaView>
@@ -125,10 +126,11 @@ const styles = StyleSheet.create({
     },
     popularBox:{
         top: 100,
-        left: 10
+        left: 10,
+        height: hp(80)
     },
     docBox:{
-        height: hp(11),
+        height: hp(15),
     },
     docContainer:{
         display:'flex',

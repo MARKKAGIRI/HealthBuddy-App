@@ -81,7 +81,7 @@ export default function Home({navigation}){
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.learnBox}>
+                <TouchableOpacity style={styles.learnBox} onPress={() => navigation.navigate('Info')}>
                     <Text style={{fontSize: wp(4), textDecorationLine:'underline', 
                 color: 'blue'}}>Learn More</Text>
                     <AntDesign name="arrowright" size={22} color="black" />
