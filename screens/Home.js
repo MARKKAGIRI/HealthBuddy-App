@@ -93,7 +93,9 @@ export default function Home({navigation}){
                         <Text>Home</Text>
                     </TouchableOpacity>
                     
-                    <TouchableOpacity style={{alignItems: 'center'}}>
+                    <TouchableOpacity style={{alignItems: 'center'}}
+                     onPress={() => navigation.navigate('Appointment')}>
+                        
                         <FontAwesome5 name="clipboard-list" size={24} color="black" />
                         <Text>Appointment</Text>
                     </TouchableOpacity>
