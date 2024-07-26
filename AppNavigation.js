@@ -4,6 +4,7 @@ import SignUp from './screens/SignUp'
 import Profile from './screens/Profile'
 import Appointment from './screens/Appointment'
 import Info from './screens/Info'
+import Home from './screens/Home'
 
 export default function AppNavigation(){
     const Stack = createNativeStackNavigator()
@@ -14,7 +15,8 @@ export default function AppNavigation(){
                 <Stack.Screen name="Sign Up" component={SignUp} />
                 <Stack.Screen name="Profile" component={Profile} />
                 <Stack.Screen name="Info" component={Info} />
-                <Stack.Screen name='Appointment' component={Appointment}/>
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="Appointment" component={Appointment} />
             </Stack.Navigator>
         </NavigationContainer>
     )

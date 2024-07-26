@@ -135,7 +135,11 @@ const styles = StyleSheet.create({
     docContainer:{
         display:'flex',
         justifyContent: 'space-between',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        borderWidth: 2,
+        borderRadius: 20,
+        padding: 10,
+        marginRight: 12
     },
     docText:{
         width: wp(50),
@@ -164,8 +168,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     ratingContainer:{
-        left: 350,
-        position: 'absolute'
+        top: 10,
+        right: 30,
+        position: 'absolute',
     },
     starImage:{
         height: hp(4),

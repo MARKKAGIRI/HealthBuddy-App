@@ -6,6 +6,7 @@ export default function Home({navigation}){
     return(
         <SafeAreaView>
             <View style={styles.homeBox}>
+                {/*this is the header bar*/}
                 <View style={styles.headerBox}>
                     <View style={styles.profileBox}>
                         <Text style={styles.greetText}>Good Morning</Text>
@@ -17,6 +18,7 @@ export default function Home({navigation}){
                     </View>
                 </View>
 
+                {/*this is the search bar*/}
                 <View>
                     <MaterialCommunityIcons name="magnify" size={24} color="black" style={styles.magnifyIcon} />
                     <TextInput
@@ -25,9 +27,12 @@ export default function Home({navigation}){
                     />
                 </View>
 
+                {/** here we are listing the functions of the app buttons */}
                 <View style={styles.functionBox}>
+
                     <View>
-                        <TouchableOpacity style={styles.appointmentBox}>
+                        <TouchableOpacity style={styles.appointmentBox}
+                        onPress={() => navigation.navigate('Appointment')}>
                             <Entypo name="calendar" size={36} color="black" style={styles.calendarIcon} />
                             <View>
                                 <Text style={styles.appointmentText}>Book an appointment</Text>
@@ -35,7 +40,7 @@ export default function Home({navigation}){
                             </View>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.pharmacyBox}>
+                        <TouchableOpacity style={styles.pharmacyBox} onPress={() => navigation.navigate('Info')}>
                             <MaterialCommunityIcons name="home-modern" size={36} color="black" style={styles.messageIcon} />
                             <View>
                                 <Text style={styles.appointmentText}>Find a pharmacy</Text>
@@ -63,6 +68,7 @@ export default function Home({navigation}){
                     </View>
                 </View>
 
+                {/**this is where there is a article preview */}
                 <TouchableOpacity style={styles.articleBox}>
                     <View style={styles.articleTextBox}>
                         <Text style={styles.articleText}>FACT OF THE DAY</Text>
@@ -81,21 +87,21 @@ export default function Home({navigation}){
                     </View>
                 </TouchableOpacity>
 
+                {/**link to the article */}
                 <TouchableOpacity style={styles.learnBox} onPress={() => navigation.navigate('Info')}>
                     <Text style={{fontSize: wp(4), textDecorationLine:'underline', 
                 color: 'blue'}}>Learn More</Text>
                     <AntDesign name="arrowright" size={22} color="black" />
                 </TouchableOpacity>
 
+                {/**here are the bottom icons  */}
                 <View style={styles.iconNavigation}>
                     <TouchableOpacity style={{alignItems: 'center'}}>
                         <MaterialCommunityIcons name="home" size={24} color="black" />
                         <Text>Home</Text>
                     </TouchableOpacity>
                     
-                    <TouchableOpacity style={{alignItems: 'center'}}
-                     onPress={() => navigation.navigate('Appointment')}>
-                        
+                    <TouchableOpacity style={{alignItems: 'center'}}>
                         <FontAwesome5 name="clipboard-list" size={24} color="black" />
                         <Text>Appointment</Text>
                     </TouchableOpacity>

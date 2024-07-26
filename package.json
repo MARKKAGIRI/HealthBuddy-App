@@ -12,10 +12,11 @@
     "@react-native-community/datetimepicker": "^8.0.0",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
-    "expo": "^51.0.21",
-    "expo-status-bar": "~1.11.1",
+    "expo": "^51.0.22",
+    "expo-status-bar": "^1.12.1",
+    "prop-types": "^15.8.1",
     "react": "18.2.0",
-    "react-native": "^0.73.6",
+    "react-native": "^0.74.3",
     "react-native-responsive-screen": "^1.4.2"
   },
   "devDependencies": {
