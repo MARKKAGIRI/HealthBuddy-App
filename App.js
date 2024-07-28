@@ -4,6 +4,9 @@ import{ createNativeStackNavigator} from '@react-navigation/native-stack'
 import { NavigationContainer} from '@react-navigation/native'
 import Home from './screens/Home'
 import Search from './screens/Search'
+import Appointment from './screens/Appointment'
+
+
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -14,6 +17,8 @@ export default function App() {
           <Stack.Screen name="Sign Up" component={SignUp} options={{headerShown: false}}/>
           <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
           <Stack.Screen name="Search" component={Search} options={{headerShown: false}}/>
+          <Stack.Screen name="Appointment" component={Appointment} options={{headerShown: false}} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

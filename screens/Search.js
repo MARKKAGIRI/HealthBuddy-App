@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
         height: hp(80)
     },
     docBox:{
-        height: hp(15),
+        height: hp(17),
     },
     docContainer:{
         display:'flex',

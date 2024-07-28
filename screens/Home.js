@@ -2,6 +2,7 @@ import{StyleSheet, Text, View, SafeAreaView, TextInput, TouchableOpacity, Image}
 import{widthPercentageToDP as wp , heightPercentageToDP as hp} from 'react-native-responsive-screen'
 import { Entypo , Octicons, MaterialCommunityIcons, AntDesign, FontAwesome5 } from '@expo/vector-icons';
 
+
 export default function Home({navigation}){
     return(
         <SafeAreaView>
