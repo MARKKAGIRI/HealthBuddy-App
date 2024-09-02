@@ -9,7 +9,7 @@ export default function Search(){
     return(
         <SafeAreaView>
             
-            <View style={styles.searchContainer}>
+            <View style={Styles.searchContainer}>
                 <MaterialCommunityIcons name="magnify" size={26} color="grey" style={{top: 4}}/>
                 <TextInput
                     placeholder='Find a doctor/specialist'
@@ -22,60 +22,60 @@ export default function Search(){
                 
             </View>
 
-            <View style={styles.categoriesContainer}>
-                <Text style={styles.categoriesText}>Categories</Text>
+            <View style={Styles.categoriesContainer}>
+                <Text style={Styles.categoriesText}>Categories</Text>
             </View>
-            <View style={styles.specialistContainer}>
+            <View style={Styles.specialistContainer}>
                 {
                     Specialists1.map((specialist , index) =>{
                         return(
-                            <TouchableOpacity key={index} style={styles.specialistButton}>
-                                <Text style={styles.specialistText}>{specialist}</Text>
+                            <TouchableOpacity key={index} style={Styles.specialistButton}>
+                                <Text style={Styles.specialistText}>{specialist}</Text>
                             </TouchableOpacity>
                         );
                     })
                 }
             </View>
 
-            <View style={styles.specialistContainer}>
+            <View style={Styles.specialistContainer}>
                 {
                     Specialists2.map((specialist , index) =>{
                         return(
-                            <TouchableOpacity key={index} style={styles.specialistButton}>
-                                <Text style={styles.specialistText}>{specialist}</Text>
+                            <TouchableOpacity key={index} style={Styles.specialistButton}>
+                                <Text style={Styles.specialistText}>{specialist}</Text>
                             </TouchableOpacity>
                         );
                     })
                 }
             </View>
 
-            <View style={styles.popularBox}>
+            <View style={Styles.popularBox}>
                 <Text>Popular</Text>
-                <ScrollView style={styles.docBox}>
+                <ScrollView style={Styles.docBox}>
 
                     {
                         DoctorData.map((doc,index)=>{
                             return(
-                                    <TouchableOpacity style={styles.docBox} key={index}>
-                                        <View style={styles.docContainer}>
+                                    <TouchableOpacity style={Styles.docBox} key={index}>
+                                        <View style={Styles.docContainer}>
                                             <View style={{display:'flex',
                                                 flexDirection: 'row'}}>
                                                 <Image 
                                                     source={doc.image}
-                                                    style={styles.docImage}
+                                                    style={Styles.docImage}
                                                 />
-                                                <View style={styles.docText}>
-                                                    <Text style={styles.docName}>{doc.name}</Text>
-                                                    <Text style={styles.docHospital}>{doc.hospital}</Text>
-                                                    <Text style={styles.docSpeciality}>{doc.speciality}</Text>
+                                                <View style={Styles.docText}>
+                                                    <Text style={Styles.docName}>{doc.name}</Text>
+                                                    <Text style={Styles.docHospital}>{doc.hospital}</Text>
+                                                    <Text style={Styles.docSpeciality}>{doc.speciality}</Text>
                                                 </View>
                                                 
                                             </View>
                                             
-                                            <View style={styles.ratingContainer}>
+                                            <View style={Styles.ratingContainer}>
                                                 <Image
                                                     source={require('../assets/star.png')}
-                                                    style={styles.starImage} 
+                                                    style={Styles.starImage} 
                                                 />
                                                 <Text>{doc.rating}</Text>
                                             </View>
@@ -92,7 +92,7 @@ export default function Search(){
     )
 }
 
-const styles = StyleSheet.create({
+const Styles = StyleSheet.create({
     searchContainer:{
         display: 'flex',
         flexDirection: 'row',

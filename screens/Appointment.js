@@ -1,9 +1,12 @@
 import {View, Text, StyleSheet, SafeAreaView, TouchableOpacity,
-    TextInput
+    TextInput,
+    ScrollView,
+    Image
 } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import{widthPercentageToDP as wp , heightPercentageToDP as hp} from 'react-native-responsive-screen'
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
+import{DoctorData} from '../constants/index'
 
 export default function Appointment(navigation){
     return(
@@ -51,7 +54,35 @@ export default function Appointment(navigation){
             </View>
             <TouchableOpacity>
                 <Ionicons name="filter" size={22} color="grey" style={styles.filterIcon} />
-            </TouchableOpacity>            
+            </TouchableOpacity>   
+
+            {/** create a data map from existing data in index.js */} 
+            <ScrollView style={styles.docScroll}>
+                {
+                    DoctorData.map((doc, index) => {
+                        return(
+                            <TouchableOpacity key={index} style={styles.docCheck}>
+                                <TouchableOpacity>
+                                    <View style={styles.checkBox}>
+                                    </View>
+                                </TouchableOpacity>
+
+                                
+                                <Image
+                                    source={doc.image}
+                                    style={styles.docImage}
+                                />
+
+                                <View>
+                                    <Text>{doc.name}</Text>
+                                    <Text>{doc.hospital}</Text>
+                                </View>
+
+                            </TouchableOpacity>
+                        )
+                    })
+                }
+            </ScrollView>        
         </SafeAreaView>
         
     )
@@ -128,5 +159,27 @@ const styles = StyleSheet.create({
         padding: 4,
         borderRadius: 4,
         width: wp(8),
-    }
+    },
+    docScroll:{
+        top: 70,
+        height: hp(80)        
+    },
+    checkBox:{
+        borderWidth:1,
+        height: hp(4),
+        width: wp(8),
+        marginRight: 40,
+        marginLeft: 17,
+        top: 10
+    },
+    docCheck:{
+        display: 'flex',
+        flexDirection: "row",
+        marginVertical: 30
+    },
+    docImage:{
+        height:hp(7),
+        width: wp(14),
+        borderRadius: 10
+    },
 })
